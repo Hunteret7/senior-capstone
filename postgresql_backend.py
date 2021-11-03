@@ -4,6 +4,7 @@ from sys import stderr, argv # Print errors to stderr
 from flask import Flask, json  # The framework for backend & dev server
 from gevent.pywsgi import WSGIServer  # The production server for backend
 from decimal import Decimal  # Allow override for decimal type in json serialization
+import re # Regular expression for validation of input
 
 
 app = Flask(__name__)  # Create the flask app
@@ -87,9 +88,13 @@ class BackendRESTAPI():
             http_server.serve_forever()
 
 
-if __name__ == "__main__":
+def main():
     # May change argv passing to env variables
     if len(argv) > 1:
         api = BackendRESTAPI(int(argv[1]))
     else:
         api = BackendRESTAPI()
+
+
+if __name__ == "__main__":
+    main()
