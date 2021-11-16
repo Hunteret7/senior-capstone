@@ -4,16 +4,11 @@ from flask import Flask, json, request  # The framework for backend & dev server
 from gevent.pywsgi import WSGIServer  # The production server for backend
 import re # Regular expression for validation of input
 import hashlib  # For hashing passwords
-
 from database_man import DatabaseConnection
 
 
 app = Flask(__name__)  # Create the flask app
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True  # Pretty print json with newlines
-
-
-
-
 
 
 class BackendRESTAPI():
