@@ -1,5 +1,5 @@
-import requests
 import random
+from generic_poster import Poster
 
 
 port = 5440
@@ -32,7 +32,8 @@ class UserGenerator:
                 "email": email
             }
             print("Adding user #{}:\n".format(i+1), data)
-            req = requests.post("http://localhost:{}/u/register".format(port), data=data)
+            req = Poster.post_data("u/register", data)
+            # req = requests.post("http://localhost:{}/u/register".format(port), data=data)
             print(req.text)
 
 UserGenerator.add_users(1)
