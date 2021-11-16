@@ -52,7 +52,7 @@ class BackendRESTAPI():
             print("nice")
             try:
                 salt, hashed_password = password_hash.split("$")
-                hash_val = hashlib.sha256((self.pepper + salt + request.form["password"]).encode()).hexdigest()
+                hash_val = hashlib.sha256((self.pepper + salt + pw).encode()).hexdigest()
                 if hash_val == hashed_password:
                     return json.jsonify({"success": True})
             except:
