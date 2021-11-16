@@ -108,7 +108,7 @@ class BackendRESTAPI():
                 except db_con.errors.UniqueViolation:
                     return json.jsonify({"error": "Username already exists"})
             except KeyError:
-                return json.jsonify({"success": False})
+                return json.jsonify({"error": "Missing required key in request"})
 
 
         # Start the server
