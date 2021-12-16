@@ -1,4 +1,5 @@
 import os  # Fetch credentials from the environment
+import sys
 from sys import argv # Print errors to stderr
 from flask import Flask, json, request  # The framework for backend & dev server
 from gevent.pywsgi import WSGIServer  # The production server for backend
@@ -10,6 +11,12 @@ from database_man import DatabaseConnection
 app = Flask(__name__)  # Create the flask app
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True  # Pretty print json with newlines
 
+
+def grab_val(request, value):
+    try:
+        return request.form[value]
+    except KeyError:
+        return None
 
 class BackendRESTAPI():
     def __init__(self, port_num=5440):
@@ -110,7 +117,15 @@ class BackendRESTAPI():
             except KeyError:
                 return json.jsonify({"error": "Missing required key in request"})
 
-
+        @app.route("/collector/add-collection", methods=["POST"])
+        def add_collection():
+            try:
+                DatabaseConnection.execute_insert("""INSERT INTO rev2.seed_collection
+                    (col_species_code, col_collected_date, col_provenance, id_method, id_person_name, id_confidence, cleaning_effectiveness, cleaned_weight, collection_history_reference)
+                    VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s)""", (grab_val(request, "speciescode"), grab_val(request, "collected_date"), grab_val(request, "collection_provenance"), grab_val(request, "id_method"), grab_val(request, "id_person"), grab_val(request, "id_confidence"), grab_val(request, "cleaning_effectiveness"), grab_val(request, "cleaned_weight"), grab_val(request, "collection_history_ref")))
+                return json.jsonify({"success": True})
+            except:
+                print("error in add collection:", sys.exc_info())
         # Start the server
         if self.devenv:
             # Development server
