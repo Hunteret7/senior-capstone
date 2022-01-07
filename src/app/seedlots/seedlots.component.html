@@ -1,0 +1,18 @@
+<h2>Seedlots on the Market</h2>
+<a>__id___name</a>
+<ul class="seedlots">
+  <li *ngFor="let seedlot of seedlots"
+  [class.selected]="seedlot === selectedSeedlot"
+  (click)="onSelect(seedlot)">
+      <span class="badge">{{seedlot.id}}</span> 
+      {{seedlot.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedSeedlot">
+
+	<h2>{{selectedSeedlot.name | uppercase}} Details</h2>
+	<div><span>id: </span>{{selectedSeedlot.id}}</div>
+      <div><span>Pounds: </span>{{selectedSeedlot.pounds}}</div>
+      <div><span>Name: </span>{{selectedSeedlot.name}}</div>
+	</div>
