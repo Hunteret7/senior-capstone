@@ -1,10 +1,40 @@
+.btn-group {
+  padding: 10px 0;
+  
+}
+.btn-group button {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+.btn-group button {
+  padding: 8px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
+  border-color: transparent;
+}
+
+.btn-group button:hover {
+  color: white;
+  background-color: #42545C;
+}
+
+.btn-group button.active {
+  background-color: black;
+}
+
+
 .map-container {
   position: absolute;
-  top: 150px;
+  top: 200px;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 30px;
+  margin: 30px 8px;
 }
 
 .map-frame {
