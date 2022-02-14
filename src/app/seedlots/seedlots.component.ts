@@ -43,8 +43,7 @@ constructor(private http : HttpClient){
   // If response comes hideloader() function is called
   // to hide that loader
   this.object = JSON.parse(JSON.stringify(Response))
-  // console.log(this.object.data[0].email)
-  console.log("obj:", this.object)
+  // console.log("obj:", this.object)
   this.headers=this.object.headers;
   this.values = this.object.data
   });
