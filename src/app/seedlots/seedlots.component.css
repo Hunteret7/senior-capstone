@@ -56,3 +56,18 @@
 input {
   padding: .5rem;
 }
+
+table {
+  width: 50%;
+}
+
+table thead th {
+  text-align: left;
+}
+tbody tr:nth-child(odd) {
+  background-color: #eee;
+}
+tbody tr td{
+  padding-left: 0;
+  padding-right: 0;
+}
