@@ -1,0 +1,69 @@
+<div class="header">
+ <p>Your profile</p>
+</div>
+
+<div class="info">
+    <p>Name:</p>
+    <p>User name:</p>
+    <p>email:</p>
+    <p>Phone number:</p>
+</div>
+
+<button class="btn btn-success" (click)="update_user()">Update Info</button>
+
+
+<div class="header">
+    <p>Your Farms</p>
+</div>
+
+<div class="info">
+    <p>Name:</p>
+    <p>email:</p>
+    <p>Phone number:</p>
+</div>
+
+<button id="addfarm" class="btn btn-success" (click)="add_farm()">add farm</button>
+
+
+<div class="header">
+    <p>Your Nurseries</p>
+</div>
+
+<div class="info">
+    <p>Name:</p>
+    <p>email:</p>
+    <p>Phone number:</p>
+</div>
+
+<button class="btn btn-success" (click)="add_nursery()">add nursery</button>
+
+
+
+
+<div class="header">
+    <p>Your Labs</p>
+</div>
+
+<div class="info">
+    <p>Name:</p>
+    <p>email:</p>
+    <p>Phone number:</p>
+</div>
+
+<button class="btn btn-success" (click)="add_lab()">add lab</button>
+    
+
+<popup>
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="addFarm" action="https://native-plants-backend.herokuapp.com/add/farm">
+            <label for="farmName">Farm name:</label><br>
+            <input type="text" id="farmName" name="farmName"><br>
+            <label for="farmLat">Farm lattitude:</label><br>
+            <input type="number" id="farmLat" name="farmLat"><br>
+            <label for="farmLong">Farm longitude:</label><br>
+            <input type="number" id="farmLong" name="farmLong"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</popup>

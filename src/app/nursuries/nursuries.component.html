@@ -1,0 +1,23 @@
+<h2>Nurseries with space</h2>
+<!-- <a>__id___name</a> -->
+<!-- <ul class="seedlots">
+    <li *ngFor="let seedlot of seedlots" [class.selected]="seedlot === selectedSeedlot" (click)="onSelect(seedlot)">
+        <span class="badge">{{seedlot.id}}</span>
+        {{seedlot.name}}
+    </li>
+</ul> -->
+
+<table class="table" id='tab'>
+    <thead>
+        <tr >
+            <th *ngFor="let head of headers">{{head}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of values;">
+            <td *ngFor="let e2 of headers">{{e[e2]}}</td>
+        </tr>
+    </tbody>
+
+
+</table>

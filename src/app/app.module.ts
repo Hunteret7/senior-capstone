@@ -7,18 +7,26 @@ import { AppComponent } from './app.component';
 import { SeedlotsComponent } from './seedlots/seedlots.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FarmsComponent } from './farms/farms.component';
+import { NursuriesComponent } from './nursuries/nursuries.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PopupModule } from 'ng2-opd-popup';
 
 @NgModule({
   declarations: [
     AppComponent,
     SeedlotsComponent,
-    DashboardComponent
+    DashboardComponent,
+    FarmsComponent,
+    NursuriesComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    PopupModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
