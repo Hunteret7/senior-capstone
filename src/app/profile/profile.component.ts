@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { stringify } from '@angular/compiler/src/util';
-import { Popup } from 'ng2-opd-popup';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   
 //  constructor(private seedlotService: SeedlotService) {}
 
-constructor(private http : HttpClient, private popup:Popup){
+constructor(private http : HttpClient){
 }
 
 
@@ -50,7 +50,7 @@ update_user(){
 
 }
 add_farm(){
-  this.popup.show()
+  
 }
 add_nursery(){
 

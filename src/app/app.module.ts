@@ -10,7 +10,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FarmsComponent } from './farms/farms.component';
 import { NursuriesComponent } from './nursuries/nursuries.component';
 import { ProfileComponent } from './profile/profile.component';
-import { PopupModule } from 'ng2-opd-popup';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { PopupModule } from 'ng2-opd-popup';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule,
-    PopupModule.forRoot()
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
